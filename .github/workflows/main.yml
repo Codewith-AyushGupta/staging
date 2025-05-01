@@ -20,6 +20,7 @@ jobs:
           git config user.email "<>"
       
       - name: Dependecies
+        working-directory: ./frontend
         run: npm ci
       
       - name: Build
