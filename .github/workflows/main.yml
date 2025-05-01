@@ -20,12 +20,6 @@ jobs:
       with:
         node-version: 14
 
-    - name: Install dependencies
-      run: npm ci
-
-    - name: Build the app
-      run: npm run build
-
     - name: Bump version and push tag
       id: bump_version
       run: |
