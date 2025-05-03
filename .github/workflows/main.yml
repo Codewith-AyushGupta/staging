@@ -1,4 +1,4 @@
-name: CI/CD
+name: CI
 
 on:
   push:
@@ -39,7 +39,7 @@ jobs:
       run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
     - name: Build Docker image
-      run: docker build -t ayushgupta1903/tut:${{ env.NEW_TAG }} .
+      run: docker build -t ayushgupta1903/reactjs-app-docker:${{ env.NEW_TAG }} .
 
     - name: Push Docker image
-      run: docker push ayushgupta1903/tut:${{ env.NEW_TAG }}
+      run: docker push ayushgupta1903/reactjs-app-docker:${{ env.NEW_TAG }}
